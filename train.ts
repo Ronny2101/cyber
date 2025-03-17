@@ -12,8 +12,26 @@
 
 //typescriptda argument type ko'rsatilmasa error beradi
 
-function getPositive(arr: number[]): string {
-    return arr.map((num: number) => (num > 0 ? num : '')).join('');
+// function getPositive(arr: number[]): string {
+//     return arr.map((num: number) => (num > 0 ? num : '')).join('');
+// }
+
+// console.log(getPositive([1, -4, 2]));
+
+
+
+//Task H-2
+
+function getDigits(input:string) {
+    let result = "";
+    for (const char of input) {
+        if (char >= "0" && char <= "9") {
+            result += char;
+        }
+   }
+   return result;
 }
 
-console.log(getPositive([1, -4, 2]));
+console.log(getDigits("m14i1t"));
+
+ 
