@@ -22,16 +22,32 @@
 
 //Task H-2
 
-function getDigits(input:string) {
-    let result = "";
-    for (const char of input) {
-        if (char >= "0" && char <= "9") {
-            result += char;
-        }
-   }
-   return result;
-}
+// function getDigits(input:string) {
+//     let result = "";
+//     for (const char of input) {
+//         if (char >= "0" && char <= "9") {
+//             result += char;
+//         }
+//    }
+//    return result;
+// }
 
-console.log(getDigits("m14i1t"));
+// console.log(getDigits("m14i1t"));
 
  
+
+
+/* 
+Project standards
+ -Logging standards
+ - Running standards
+    function , method, variable => CAMEL
+    class => PASCAL
+    folder => KEBAB
+    css => SNAKE
+ -Error handling
+
+
+
+
+*/
