@@ -11,7 +11,7 @@ const memberSchema = new Schema(
             default:MemberType.USER,
         },
 
-        MemberStatus: {
+        memberStatus: {
             type: String,
             enum: MemberStatus,
             default: MemberStatus.ACTIVE,

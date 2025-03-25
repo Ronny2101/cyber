@@ -29,7 +29,6 @@ class MemberService {
           return result;
         } catch (err) {
           throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
-          console.log("Signup input:", input);
 
         }
   }
