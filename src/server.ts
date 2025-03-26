@@ -11,6 +11,7 @@
     const PORT = process.env.PORT ?? 3003;
     app.listen(PORT, function () {
         console.log(`The server is running succesfuly on port:${PORT}`);
+        console.log(`Admin project on http://localhost:${PORT}/admin \n`)
     });
  })
  .catch((err)=> console.log("Error on connection Mongodb",err));
