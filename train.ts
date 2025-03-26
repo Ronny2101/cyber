@@ -55,8 +55,26 @@ Project standards
 
 
 // Task - I
-function majorityElement(arr: number[]) {
-   return arr.sort((a, b) => arr.filter(x => x === b).length - arr.filter(x => x === a).length)[0];
- }
+// function majorityElement(arr: number[]) {
+//    return arr.sort((a, b) => arr.filter(x => x === b).length - arr.filter(x => x === a).length)[0];
+//  }
 
- console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+//  console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+
+
+//TASK J
+
+function findLongestWord(string: string)  {
+   return string.split(" ").reduce((a, b) =>   {
+       if ( b.length > a.length)  {
+            return b;
+         } else {
+            return a;
+         }
+      });
+}
+   
+
+ 
+
+console.log(findLongestWord("I came from Uzbekistan!!!"));
