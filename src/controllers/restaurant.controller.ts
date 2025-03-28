@@ -3,7 +3,7 @@ import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import  { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import  { MemberType }  from "../libs/enums/member.enum";
-import { Message } from "../libs/Errors";
+import Errors, { Message } from "../libs/Errors";
 
 const memberService = new MemberService()
 
@@ -52,7 +52,11 @@ restaurantController.processSignup = async (req:AdminRequest, res: Response) => 
          });
     } catch (err) {
         console.log("Error,processSignup:", err);
-        res.send(err);
+        const message = 
+          err instanceof Errors ?  err.message   : Message.SOMETHING_WENT_WRONG;
+        res.send(
+            `<script> alert ("${message}"): windov.location.replace('admin/signup')</script>`
+        );
     }
 };
 
@@ -70,10 +74,28 @@ restaurantController.processLogin = async(req: AdminRequest, res: Response) => {
             });
     } catch (err) {
         console.log("Error, processLogin:", err);
-        res.send(err);
+        const message = 
+          err instanceof Errors ?  err.message   : Message.SOMETHING_WENT_WRONG;
+        res.send(
+            `<script> alert ("${message}"): windov.location.replace('admin/login')</script>`
+        );
     }
 };
 
+restaurantController.logout = async(
+    req: AdminRequest,
+    res: Response
+) => {
+    try {
+        console.log("logout");
+        req.session.destroy(function()  {
+            res.redirect("/admin");
+        });
+    } catch (err) {
+        console.log("Error, processLogin:", err);
+        res.send(err);
+    }
+};
 
 restaurantController.checkAutSession = async(req: AdminRequest, res: Response) => {
     try {
