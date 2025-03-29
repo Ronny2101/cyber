@@ -64,17 +64,32 @@ Project standards
 
 //TASK J
 
-function findLongestWord(string: string)  {
-   return string.split(" ").reduce((a, b) =>   {
-       if ( b.length > a.length)  {
-            return b;
-         } else {
-            return a;
-         }
-      });
-}
+// function findLongestWord(string: string)  {
+//    return string.split(" ").reduce((a, b) =>   {
+//        if ( b.length > a.length)  {
+//             return b;
+//          } else {
+//             return a;
+//          }
+//       });
+// }
    
 
  
 
-console.log(findLongestWord("I came from Uzbekistan!!!"));
+// console.log(findLongestWord("I came from Uzbekistan!!!"));
+
+
+// Task K
+
+function countVowels (string:string)  {
+   let count = 0;
+   for (let char of string) {
+      if ('aieuo'.includes(char)) {
+         count++;
+      }
+   } 
+   return count;
+}
+
+console.log(countVowels("string"));

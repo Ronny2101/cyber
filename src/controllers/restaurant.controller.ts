@@ -14,6 +14,7 @@ restaurantController.goHome = (req: Request, res: Response) => {
         res.render("home");
     } catch (err) {
         console.log("Error, goHome:", err);
+        res.redirect("/admin");
     }
 };
 
@@ -23,6 +24,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
         res.render("login");
     } catch (err) {
         console.log("Error, getLogin:", err);
+        res.redirect("/admin");
     }
 };
 
@@ -32,6 +34,7 @@ restaurantController.getSignup = (req: Request, res: Response) => {
         res.render("signup");
     } catch (err) {
         console.log("Error, getSignup:", err);
+        res.redirect("/admin");
     }
 };
 
@@ -93,7 +96,7 @@ restaurantController.logout = async(
         });
     } catch (err) {
         console.log("Error, processLogin:", err);
-        res.send(err);
+        res.redirect("/admin");
     }
 };
 
