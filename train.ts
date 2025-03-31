@@ -82,14 +82,26 @@ Project standards
 
 // Task K
 
-function countVowels (string:string)  {
-   let count = 0;
-   for (let char of string) {
-      if ('aieuo'.includes(char)) {
-         count++;
-      }
-   } 
-   return count;
-}
+// function countVowels (string:string)  {
+//    let count = 0;
+//    for (let char of string) {
+//       if ('aieuo'.includes(char)) {
+//          count++;
+//       }
+//    } 
+//    return count;
+// }
 
-console.log(countVowels("string"));
+// console.log(countVowels("string"));
+
+
+
+//Task L
+
+function reverseSentence(sentence:string) {
+    return sentence
+    .split(" ")
+    .map(word => word.split("").reverse().join(""))
+    .join(" ");
+   }
+console.log(reverseSentence("we like coding!"));
