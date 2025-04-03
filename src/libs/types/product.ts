@@ -4,7 +4,7 @@ import { ProductCollection, ProductSize, ProductStatus } from "../enums/product.
 
 export interface Product {
     _id:ObjectId;
-    ProductStatus : ProductStatus;
+    productStatus : ProductStatus;
     productCollection : ProductCollection;
     productName : string;
     productPrice: number;
@@ -20,7 +20,7 @@ export interface Product {
 
 export interface ProductInput {
     _id:ObjectId;
-    ProductStatus? : ProductStatus;
+    productStatus? : ProductStatus;
     productCollection? : ProductCollection;
     productName? : string;
     productPrice? : number;
@@ -35,7 +35,7 @@ export interface ProductInput {
 
 
 export interface ProductUpdateInput {
-    ProductStatus? : ProductStatus;
+    productStatus? : ProductStatus;
     productCollection : ProductCollection;
     productName : string;
     productPrice: number;
