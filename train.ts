@@ -110,12 +110,22 @@ Project standards
 
 //Task M
 
-function getSquareNumbers(arr: number[]): {number: number; square: number} [] {
-   return arr.map(num => ({
-      number: num,
-      square: num * num 
-   }));
-} 
+// function getSquareNumbers(arr: number[]): {number: number; square: number} [] {
+//    return arr.map(num => ({
+//       number: num,
+//       square: num * num 
+//    }));
+// } 
 
 
-console.log(getSquareNumbers([2,3,1,4]));
+// console.log(getSquareNumbers([2,3,1,4]));
+
+
+//Train N
+
+function palindromCheck(string: string) {
+   return string === string.split("").reverse().join("");
+}
+
+console.log(palindromCheck("dat"));
+console.log(palindromCheck("dad"));
