@@ -97,10 +97,45 @@ restaurantController.logout = async(
             res.redirect("/admin");
         });
     } catch (err) {
-        console.log("Error, processLogin:", err);
+        console.log("Error, logout:", err);
         res.redirect("/admin");
     }
 };
+
+
+
+restaurantController.getUsers = async(
+    req: Request,
+    res: Response
+) => {
+    try {
+        console.log("getUsers");
+        const result = await memberService.getUsers();
+        console.log("result",result); 
+
+
+
+        res.render("users", { users: result});
+    } catch (err) {
+        console.log("Error, getUsers:", err);
+        res.redirect("/admin/login");
+    }
+};
+
+
+
+
+restaurantController.updateChosenUser = async(
+    req: Request,
+    res: Response
+) => {
+    try {
+        console.log("updateChosenUser");
+    } catch (err) {
+        console.log("Error,updateChosenUser:", err);
+    }
+};
+
 
 restaurantController.checkAutSession = async(req: AdminRequest, res: Response) => {
     try {
