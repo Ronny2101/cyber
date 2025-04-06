@@ -111,9 +111,7 @@ restaurantController.getUsers = async(
     try {
         console.log("getUsers");
         const result = await memberService.getUsers();
-        console.log("result",result); 
-
-
+       
 
         res.render("users", { users: result});
     } catch (err) {
@@ -131,8 +129,14 @@ restaurantController.updateChosenUser = async(
 ) => {
     try {
         console.log("updateChosenUser");
+        const result = await memberService.updateChosenUser(req.body);
+
+        res.status(HttpCode.OK).json({data: result});
     } catch (err) {
         console.log("Error,updateChosenUser:", err);
+        if (err instanceof Errors) res.status(err.code).json(err);
+        else res.status(Errors.standard.code).json(Errors.standard);
+    
     }
 };
 
