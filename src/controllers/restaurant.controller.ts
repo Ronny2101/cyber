@@ -49,7 +49,7 @@ restaurantController.processSignup = async (req:AdminRequest, res: Response) => 
         newMember.memberImage = file.path;
         newMember.memberType = MemberType.RESTAURANT;
         const result = await memberService.processSignup(newMember);
-          //TODO: SESSIONS AUTHENTICATON
+          
           
          req.session.member = result;
          req.session.save(function () {
@@ -60,29 +60,32 @@ restaurantController.processSignup = async (req:AdminRequest, res: Response) => 
         const message = 
           err instanceof Errors ?  err.message   : Message.SOMETHING_WENT_WRONG;
         res.send(
-            `<script> alert ("${message}"): windov.location.replace('admin/signup')</script>`
+            `<script> alert ("${message}"); window.location.replace('/admin/signup') </script>`
         );
     }
 };
 
 
-restaurantController.processLogin = async(req: AdminRequest, res: Response) => {
+restaurantController.processLogin = async (
+    req: AdminRequest,
+    res: Response
+) => {
     try {
         console.log("processLogin");
-        console.log("body:", req.body);
-        const input: LoginInput = req.body,
-        result = await memberService.processLogin(input);
-            //TODO: SESSIONS AUTHENTICATON
-            req.session.member = result;
-            req.session.save(function () {
-                res.redirect("/admin/product/all");
-            });
+        
+        const input: LoginInput = req.body;
+        const result = await memberService.processLogin(input);
+             
+        req.session.member = result;
+        req.session.save(function () {
+           res.redirect("/admin/product/all");
+        });
     } catch (err) {
         console.log("Error, processLogin:", err);
         const message = 
           err instanceof Errors ?  err.message   : Message.SOMETHING_WENT_WRONG;
         res.send(
-            `<script> alert ("${message}"): windov.location.replace('admin/login')</script>`
+            `<script> alert ("${message}"); window.location.replace('/admin/login') </script>`
         );
     }
 };
@@ -144,8 +147,9 @@ restaurantController.updateChosenUser = async(
 restaurantController.checkAutSession = async(req: AdminRequest, res: Response) => {
     try {
         console.log("checkAutSession");
-         if (req.session?.member)res.send(`<script> alert ("${req.session.member.memberNick}")</script>`);
-         else res.send(`<script> alert ("${Message.NOT_AUTHENTICATED}")</script>`);
+         if (req.session?.member)
+            res.send(`<script> alert ("${req.session.member.memberNick}") </script>`);
+         else res.send(`<script> alert ("${Message.NOT_AUTHENTICATED}") </script>`);
     } catch (err) {
         console.log("Error, checkAutSession:", err);
         res.send(err);
@@ -162,7 +166,9 @@ restaurantController.verifyRestaurant = (
            next(); 
     } else {
         const message = Message.NOT_AUTHENTICATED;
-        res.send(`<script> alert ("${message}"): windov.location.replace('admin/login')</script>`);
+        res.send(
+            `<script> alert ("${message}"): window.location.replace('/admin/login') </script>`
+        );
     }
 };
 
