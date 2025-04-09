@@ -123,9 +123,26 @@ Project standards
 
 //Train N
 
-function palindromCheck(string: string) {
-   return string === string.split("").reverse().join("");
+// function palindromCheck(string: string) {
+//    return string === string.split("").reverse().join("");
+// }
+
+// console.log(palindromCheck("dat"));
+// console.log(palindromCheck("dad"));
+
+
+//Task O
+
+function calculateSumOfNumbers(arr: any[]) {
+   let sum: number = 0;
+
+   for(const item of arr) {
+      if(typeof item === "number") {
+         sum += item
+      }
+   }
+   return sum;
 }
 
-console.log(palindromCheck("dat"));
-console.log(palindromCheck("dad"));
+
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true,35]));
