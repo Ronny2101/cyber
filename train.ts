@@ -146,3 +146,13 @@ Project standards
 
 
 // console.log(calculateSumOfNumbers([10, "10", {son: 10}, true,35]));
+
+
+//Task P
+
+function objectToArray(obj: object): [string, any] [] {
+   return Object.entries(obj);
+}
+
+
+console.log(objectToArray({a:10,b:20}));
