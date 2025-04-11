@@ -1,4 +1,5 @@
 import MemberModel from "../schema/Member.model";
+import { MemberStatus } from "../libs/enums/member.enum";
 import { LoginInput, Member, MemberInput, MemberUdateInput } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import { MemberType } from "../libs/enums/member.enum";
@@ -30,15 +31,18 @@ class MemberService {
 }
 
 public async login(input: LoginInput): Promise<Member> {
-  //TODO: Consider member status later
+   
   const member = await this.memberModel
   .findOne(
-    {memberNick: input.memberNick},
-    { memberNick: 1, memberPassword: 1}
+    {memberNick: input.memberNick, memberStatus: { $ne: MemberStatus.DELETE },
+  },
+    { memberNick: 1, memberPassword: 1, memberStatus: 1}
   )
   .exec();
 if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
-
+   else if(member.memberStatus === MemberStatus.BLOCK) {
+    throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER);
+   }
   const isMatch = await bcrypt.compare(
     input.memberPassword,
     member.memberPassword
