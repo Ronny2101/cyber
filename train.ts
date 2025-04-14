@@ -1,4 +1,5 @@
 // function getHighestIndex(arr) {
+
 //     let highIndex = 0;
 //     for (let i = 1; i < arr.length; i++) 
 //         if (arr[i] > arr[highIndex]) highIndex=i ;
@@ -150,9 +151,20 @@ Project standards
 
 //Task P
 
-function objectToArray(obj: object): [string, any] [] {
-   return Object.entries(obj);
+// function objectToArray(obj: object): [string, any] [] {
+//    return Object.entries(obj);
+// }
+
+
+// console.log(objectToArray({a:10,b:20}));
+
+
+//Task Q
+
+function hasProperty(object: object, key: string) {
+   return key in object;
 }
 
 
-console.log(objectToArray({a:10,b:20}));
+console.log(hasProperty({name: "BMW", model: "520d"}, "model"));
+console.log(hasProperty({name: "BMW", model: "520d"}, "uy"));

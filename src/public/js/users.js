@@ -3,7 +3,7 @@ console.log("Users frontend javascript file");
 $(function () {
     $(".member-status").on("change", function (e) {
         const id = e.target.id,
-              memberStatus = $(`#${id}.member-status`).val();
+             memberStatus = $(`#${id}.member-status`).val();
  
 
 
