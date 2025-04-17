@@ -161,10 +161,20 @@ Project standards
 
 //Task Q
 
-function hasProperty(object: object, key: string) {
-   return key in object;
+// function hasProperty(object: object, key: string) {
+//    return key in object;
+// }
+
+
+// console.log(hasProperty({name: "BMW", model: "520d"}, "model"));
+// console.log(hasProperty({name: "BMW", model: "520d"}, "uy"));
+
+
+//Train R
+
+function calculate(string:string)  {
+   const [a, b] = string.split(" + ").map(Number);
+   return a + b;
 }
 
-
-console.log(hasProperty({name: "BMW", model: "520d"}, "model"));
-console.log(hasProperty({name: "BMW", model: "520d"}, "uy"));
+console.log(calculate("1 + 3"));
