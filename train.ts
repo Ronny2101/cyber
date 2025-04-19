@@ -172,9 +172,24 @@ Project standards
 
 //Train R
 
-function calculate(string:string)  {
-   const [a, b] = string.split(" + ").map(Number);
-   return a + b;
+// function calculate(string:string)  {
+//    const [a, b] = string.split(" + ").map(Number);
+//    return a + b;
+// }
+
+// console.log(calculate("1 + 3"));
+
+//Train S
+
+function missingNumber(number:number[]) {
+   let n = number.length;
+   let total = (n * (n + 1)) /2
+   let sum = 0;
+
+   for (let num of number) {
+      sum += num;
+   }
+   return total - sum;
 }
 
-console.log(calculate("1 + 3"));
+console.log(missingNumber([3, 0, 1]));
