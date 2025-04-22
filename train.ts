@@ -181,15 +181,25 @@ Project standards
 
 //Train S
 
-function missingNumber(number:number[]) {
-   let n = number.length;
-   let total = (n * (n + 1)) /2
-   let sum = 0;
+// function missingNumber(number:number[]) {
+//    let n = number.length;
+//    let total = (n * (n + 1)) /2
+//    let sum = 0;
 
-   for (let num of number) {
-      sum += num;
-   }
-   return total - sum;
+//    for (let num of number) {
+//       sum += num;
+//    }
+//    return total - sum;
+// }
+
+// console.log(missingNumber([3, 0, 1]));
+
+
+//Task T
+
+function mergeSortedArrays(arr1: number[], arr2: number[]) {
+   return[...arr1, ...arr2].sort((a, b) => a - b);
 }
 
-console.log(missingNumber([3, 0, 1]));
+
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
