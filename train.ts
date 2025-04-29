@@ -207,14 +207,30 @@ Project standards
 
 //Task U
 
-function sumOdds(number: number) {
-   let count = 0;
+// function sumOdds(number: number) {
+//    let count = 0;
 
-   for(let i = 1; i < number; i+=2) {
-      count++;
-   }
-   return count;
-}
+//    for(let i = 1; i < number; i+=2) {
+//       count++;
+//    }
+//    return count;
+// }
  
-console.log(sumOdds(9));
-console.log(sumOdds(11));
+// console.log(sumOdds(9));
+// console.log(sumOdds(11));
+
+//Task V
+
+function countChars(string: string): Record<string, number> {
+   const result: Record<string, number> = {};
+   for (const char of string) {
+      if(result[char]) {
+         result[char]++;
+      }else{
+         result[char] = 1;
+      }
+   }
+   return result;
+}
+
+console.log(countChars("hello"));
