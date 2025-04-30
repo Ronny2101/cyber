@@ -221,16 +221,16 @@ Project standards
 
 //Task V
 
-function countChars(string: string): Record<string, number> {
-   const result: Record<string, number> = {};
-   for (const char of string) {
-      if(result[char]) {
-         result[char]++;
-      }else{
-         result[char] = 1;
-      }
-   }
-   return result;
-}
+// function countChars(string: string): Record<string, number> {
+//    const result: Record<string, number> = {};
+//    for (const char of string) {
+//       if(result[char]) {
+//          result[char]++;
+//       }else{
+//          result[char] = 1;
+//       }
+//    }
+//    return result;
+// }
 
-console.log(countChars("hello"));
+// console.log(countChars("hello"));
