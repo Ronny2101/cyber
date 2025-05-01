@@ -234,3 +234,15 @@ Project standards
 // }
 
 // console.log(countChars("hello"));
+
+
+//Task W
+
+
+function chunkArray<A>(arr: A[], size: number): A[][] {
+   return Array.from({ length: Math.ceil(arr.length/size)}, (_, i) => 
+      arr.slice(i * size, i *size + size)
+   );
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
