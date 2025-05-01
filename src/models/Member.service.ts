@@ -70,6 +70,20 @@ public async getMemberDetail(member: Member): Promise<Member> {
 }
 
 
+public async updateMember( 
+  member: Member,
+  input: MemberUdateInput
+): Promise<Member> {
+  const memberId = shapeIntoMongooseObjectId(member._id);
+  const result = await this.memberModel
+  .findByIdAndUpdate({_id: memberId }, input, {new: true })
+  .exec();
+  if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+  return result;
+}
+
+
 
      /**BSSR*/
 
