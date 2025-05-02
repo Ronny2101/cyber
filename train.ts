@@ -35,6 +35,8 @@
 
 // console.log(getDigits("m14i1t"));
 
+
+
  
 
 
@@ -246,3 +248,22 @@ Project standards
 // }
 
 // console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+
+
+
+//Task X
+
+function countOccurrences(obj: any, key: string) {
+   if (typeof obj !== "object" || obj === null) return 0;
+ 
+   let count = key in obj ? 1 : 0;
+ 
+   for (const k in obj) {
+     count += countOccurrences(obj[k], key);
+   }
+ 
+   return count;
+ }
+ 
+ console.log(countOccurrences({ model: "Bugatti", steer: { model: "HANKOOK",size: 30 }}, "model")); 
