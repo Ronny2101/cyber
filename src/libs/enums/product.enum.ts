@@ -17,6 +17,7 @@ export enum ProductStatus {
     PAUSE = "PAUSE",
     PROCRESS = "PROCRESS",
     DELETE = "DELETE",
+    PRPCESS = "PRPCESS",
      
      
     

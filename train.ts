@@ -254,16 +254,16 @@ Project standards
 
 //Task X
 
-function countOccurrences(obj: any, key: string) {
-   if (typeof obj !== "object" || obj === null) return 0;
+// function countOccurrences(obj: any, key: string) {
+//    if (typeof obj !== "object" || obj === null) return 0;
  
-   let count = key in obj ? 1 : 0;
+//    let count = key in obj ? 1 : 0;
  
-   for (const k in obj) {
-     count += countOccurrences(obj[k], key);
-   }
+//    for (const k in obj) {
+//      count += countOccurrences(obj[k], key);
+//    }
  
-   return count;
- }
+//    return count;
+//  }
  
- console.log(countOccurrences({ model: "Bugatti", steer: { model: "HANKOOK",size: 30 }}, "model")); 
+//  console.log(countOccurrences({ model: "Bugatti", steer: { model: "HANKOOK",size: 30 }}, "model")); 

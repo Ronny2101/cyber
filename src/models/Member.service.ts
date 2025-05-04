@@ -33,7 +33,7 @@ class MemberService {
       try {
         const result = await this.memberModel.create(input);
         result.memberPassword = "";
-        return result.toJSON();;
+        return result.toJSON();
       } catch (err) {
         console.error("Error, model:signup:", err);
         throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
