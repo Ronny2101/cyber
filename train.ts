@@ -267,3 +267,13 @@ Project standards
 //  }
  
 //  console.log(countOccurrences({ model: "Bugatti", steer: { model: "HANKOOK",size: 30 }}, "model")); 
+
+
+//Task Y
+
+function findIntersection(a:number[], b: number[]) {
+   return [...new Set(a.filter(x => b.includes(x)))];
+}
+
+
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
