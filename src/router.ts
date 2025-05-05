@@ -17,20 +17,27 @@ router.get(
      "/member/detail",
     memberController.verifyAuth,
     memberController.getMemberDetail
- );
+);
 
- router.post(
+router.post(
     "/member/update",
     memberController.verifyAuth,
     uploader("members").single("memberImage"),
     memberController.updateMember
- );
+);
 
- router.get("/member/top-users", memberController.getTopUsers);
+router.get("/member/top-users", memberController.getTopUsers);
 
  /**Products*/
 
 router.get("/product/all", productController.getProducts);
+router.get(
+   "/product/:id",
+    memberController.retrieveAuth,
+    productController.getProduct
+);
 
 /**Order */
+
+
 export default router;

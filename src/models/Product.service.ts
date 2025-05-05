@@ -4,7 +4,7 @@ import Errors, { HttpCode, Message } from "../libs/Errors";
 import { Product, ProductInput, ProductInquiry, ProductUpdateInput }  from  "../libs/types/product";
 import ProductModel from "../schema/Product.model";
 import { T } from "../libs/types/common";
-
+import { ObjectId } from "mongoose";
 
 
 class ProductService {
@@ -16,8 +16,8 @@ class ProductService {
       }
 
     /**SPA */
-     public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
-      const match: T = { productStatus: ProductStatus.PROCRESS };
+    public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
+      const match: T = { productStatus: ProductStatus.PROCESS };
 
       if (inquiry.productCollection)
         match.productCollection = inquiry.productCollection;
@@ -26,24 +26,44 @@ class ProductService {
       }
        
       const sort: T =
-      inquiry.order === "productPrice"
-      ? { [inquiry.order]: 1 }
-      : { [inquiry.order]: -1 };
+        inquiry.order === "productPrice"
+        ? { [inquiry.order]: 1 }
+        : { [inquiry.order]: -1 };
 
 
       const result = await this.productModel
-       .aggregate([
-         { $match: match},
-         { $sort: sort },
-         { $skip: (inquiry.page * 1 - 1) * inquiry.limit },
-         { $limit: inquiry.limit * 1 },
-       ])
+        .aggregate([
+          { $match: match},
+          { $sort: sort },
+          { $skip: (inquiry.page * 1 - 1) * inquiry.limit },
+          { $limit: inquiry.limit * 1 },
+        ])
        .exec();
       if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
       
       return result;
 
-     }
+    }
+
+
+    public async getProduct( 
+       memberId: ObjectId | null,
+       id: string
+      ): Promise<Product> {
+       const productId = shapeIntoMongooseObjectId(id);
+
+       let result = await this.productModel
+          .findOne({
+            _id: productId,
+            productStatus: ProductStatus.PROCESS,
+          })
+          .exec();
+        if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+        //TODO: If authenticated users => first => view log creation
+      
+       return result;
+    }
     
 
     /**SRR */
