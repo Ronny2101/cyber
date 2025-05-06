@@ -84,7 +84,7 @@ class ProductService {
           result = await this.productModel
           .findByIdAndUpdate(
             productId,
-            { $inc: { productViews: +1} },
+            { $inc: { productViews: +1 } },
             { new: true}
           )
           .exec();

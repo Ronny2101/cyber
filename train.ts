@@ -271,9 +271,9 @@ Project standards
 
 //Task Y
 
-function findIntersection(a:number[], b: number[]) {
-   return [...new Set(a.filter(x => b.includes(x)))];
-}
+// function findIntersection(a:number[], b: number[]) {
+//    return [...new Set(a.filter(x => b.includes(x)))];
+// }
 
 
-console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+// console.log(findIntersection([1, 2, 3], [3, 2, 0]));
