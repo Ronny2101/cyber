@@ -13,7 +13,7 @@ const orderSchema = new Schema(
             required: true,
         },
 
-        oredrStatus: {
+        orderStatus: {
             type: String,
             enum: OrderStatus,
             default: OrderStatus.PAUSE,
@@ -24,7 +24,7 @@ const orderSchema = new Schema(
             required: true,
             ref: "Member",
         },
-    },  {timestamps: true}
+    },  {timestamps: true, collection: "orders"}
 );
 
 export default mongoose.model("Order", orderSchema);

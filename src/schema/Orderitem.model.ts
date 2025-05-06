@@ -13,7 +13,7 @@ const orderItemSchema = new Schema (
             required: true,
         },
 
-        oredrId: {
+        orderId: {
             type: Schema.Types.ObjectId,
             ref: "Order",
         },
@@ -23,7 +23,7 @@ const orderItemSchema = new Schema (
             ref: "Product",
         }
     },  
-  {timestamps: true, collection: "orderItems"}
+  { timestamps: true, collection: "orderItems"}
 );
 
 
