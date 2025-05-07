@@ -277,3 +277,12 @@ Project standards
 
 
 // console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+
+//Task Z
+
+function sumEvens(numbers:number[]) {
+   return numbers.filter(n => n % 2 === 0).reduce((a, b) => a + b, 0);
+}
+
+console.log(sumEvens([1, 2, 3]));
+console.log(sumEvens([1, 2, 3, 2]));
