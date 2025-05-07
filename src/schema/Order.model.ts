@@ -18,7 +18,7 @@ const orderSchema = new Schema(
             enum: OrderStatus,
             default: OrderStatus.PAUSE,
         },
-
+        
         memberId: {
             type: Schema.Types.ObjectId,
             required: true,

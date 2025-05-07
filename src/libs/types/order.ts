@@ -17,7 +17,7 @@ export interface Order {
     _id: ObjectId;
     orderTotal: number;
     orderDelivery: number;
-    orderStatus: OrderStatus;
+    orderStatus:OrderStatus;
     memberId: ObjectId;
     createdAt: Date;
     updatedAt: Date;
@@ -36,5 +36,11 @@ export interface OrderItemInput {
 export interface OrderInquiry {
     page: number;
     limit: number;
+    orderStatus: OrderStatus;  
+}
+
+
+export interface OrderUpdateInput {
+    orderId: string;
     orderStatus: OrderStatus;  
 }
