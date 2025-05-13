@@ -280,9 +280,18 @@ Project standards
 
 //Task Z
 
-function sumEvens(numbers:number[]) {
-   return numbers.filter(n => n % 2 === 0).reduce((a, b) => a + b, 0);
+// function sumEvens(numbers:number[]) {
+//    return numbers.filter(n => n % 2 === 0).reduce((a, b) => a + b, 0);
+// }
+
+// console.log(sumEvens([1, 2, 3]));
+// console.log(sumEvens([1, 2, 3, 2]));
+
+
+//Task ZB
+
+function randomBetween(min: number, max: number) {
+   return Math.round(Math.random() * (max - min) + min);
 }
 
-console.log(sumEvens([1, 2, 3]));
-console.log(sumEvens([1, 2, 3, 2]));
+console.log(randomBetween(30, 50));
