@@ -290,8 +290,19 @@ Project standards
 
 //Task ZB
 
-function randomBetween(min: number, max: number) {
-   return Math.round(Math.random() * (max - min) + min);
+// function randomBetween(min: number, max: number) {
+//    return Math.round(Math.random() * (max - min) + min);
+// }
+
+// console.log(randomBetween(30, 50));
+
+
+// Task ZC
+
+function celsiusToFarhenheit ( celsius: number) {
+   const farhenheit = ( celsius * 9/5) + 32;
+   return  farhenheit;
 }
 
-console.log(randomBetween(30, 50));
+console.log(celsiusToFarhenheit(0));
+console.log(celsiusToFarhenheit(10));
