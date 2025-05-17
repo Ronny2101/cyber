@@ -299,10 +299,22 @@ Project standards
 
 // Task ZC
 
-function celsiusToFarhenheit ( celsius: number) {
-   const farhenheit = ( celsius * 9/5) + 32;
-   return  farhenheit;
+// function celsiusToFarhenheit ( celsius: number) {
+//    const farhenheit = ( celsius * 9/5) + 32;
+//    return  farhenheit;
+// }
+
+// console.log(celsiusToFarhenheit(0));
+// console.log(celsiusToFarhenheit(10));
+
+
+//Task ZD
+
+function changeNumberInArray(index: number, arr: number[], newvalue: number) {
+   return arr.reduce((acc, curr, i) => {
+      acc.push(i === index ? newvalue : curr);
+      return acc;
+   }, [] as number[]);
 }
 
-console.log(celsiusToFarhenheit(0));
-console.log(celsiusToFarhenheit(10));
+console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
