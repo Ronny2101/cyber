@@ -310,11 +310,20 @@ Project standards
 
 //Task ZD
 
-function changeNumberInArray(index: number, arr: number[], newvalue: number) {
-   return arr.reduce((acc, curr, i) => {
-      acc.push(i === index ? newvalue : curr);
-      return acc;
-   }, [] as number[]);
+// function changeNumberInArray(index: number, arr: number[], newvalue: number) {
+//    return arr.reduce((acc, curr, i) => {
+//       acc.push(i === index ? newvalue : curr);
+//       return acc;
+//    }, [] as number[]);
+// }
+
+// console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+
+
+//Train ZE 
+function removeDuplicate(string: string) {
+   return[...new Set(string)].join("");
 }
 
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+console.log(removeDuplicate("sttringg"));
+console.log(removeDuplicate("aabbccdde"));
