@@ -321,9 +321,19 @@ Project standards
 
 
 //Train ZE 
-function removeDuplicate(string: string) {
-   return[...new Set(string)].join("");
+// function removeDuplicate(string: string) {
+//    return[...new Set(string)].join("");
+// }
+
+// console.log(removeDuplicate("sttringg"));
+// console.log(removeDuplicate("aabbccdde"));
+
+//Train Z
+
+function capitalizeWords(string: string) {
+   return string.split(" ").map(word => word.length > 2 
+      ? word.charAt(0).toUpperCase() + word.slice(1) 
+      : word).join(" ");
 }
 
-console.log(removeDuplicate("sttringg"));
-console.log(removeDuplicate("aabbccdde"));
+console.log(capitalizeWords("name should be a string"));
