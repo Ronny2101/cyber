@@ -328,7 +328,7 @@ Project standards
 // console.log(removeDuplicate("sttringg"));
 // console.log(removeDuplicate("aabbccdde"));
 
-//Train Z
+//Train ZF
 
 function capitalizeWords(string: string) {
    return string.split(" ").map(word => word.length > 2 
