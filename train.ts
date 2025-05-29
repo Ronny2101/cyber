@@ -347,3 +347,22 @@ function convertToSnakeCase(string: string) {
 
 
 console.log(convertToSnakeCase("name should be a string"));
+
+
+//Task ZH
+
+
+function findDisappearedNumbers(arr: number[]): number[] {
+   const result: number[] = [];
+   let min = Math.min(...arr);
+   let max = Math.max(...arr);
+
+   for (let i = min; i <= max; i++) {
+      if (!arr.includes(i)) {
+         result.push(i);
+      }
+   }
+   return result;
+}
+
+console.log(findDisappearedNumbers([1,3,4,7]));
