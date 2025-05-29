@@ -330,10 +330,20 @@ Project standards
 
 //Train ZF
 
-function capitalizeWords(string: string) {
-   return string.split(" ").map(word => word.length > 2 
-      ? word.charAt(0).toUpperCase() + word.slice(1) 
-      : word).join(" ");
+// function capitalizeWords(string: string) {
+//    return string.split(" ").map(word => word.length > 2 
+//       ? word.charAt(0).toUpperCase() + word.slice(1) 
+//       : word).join(" ");
+// }
+
+// console.log(capitalizeWords("name should be a string"));
+
+
+//Task ZG
+
+function convertToSnakeCase(string: string) {
+   return string.trim().toLowerCase().replace(/\s+/g, '_');
 }
 
-console.log(capitalizeWords("name should be a string"));
+
+console.log(convertToSnakeCase("name should be a string"));
