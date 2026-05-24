@@ -341,28 +341,42 @@ Project standards
 
 //Task ZG
 
-function convertToSnakeCase(string: string) {
-   return string.trim().toLowerCase().replace(/\s+/g, '_');
-}
+// function convertToSnakeCase(string: string) {
+//    return string.trim().toLowerCase().replace(/\s+/g, '_');
+// }
 
 
-console.log(convertToSnakeCase("name should be a string"));
+// console.log(convertToSnakeCase("name should be a string"));
 
 
 //Task ZH
 
 
-function findDisappearedNumbers(arr: number[]): number[] {
-   const result: number[] = [];
-   let min = Math.min(...arr);
-   let max = Math.max(...arr);
+// function findDisappearedNumbers(arr: number[]): number[] {
+//    const result: number[] = [];
+//    let min = Math.min(...arr);
+//    let max = Math.max(...arr);
 
-   for (let i = min; i <= max; i++) {
-      if (!arr.includes(i)) {
-         result.push(i);
-      }
-   }
-   return result;
-}
+//    for (let i = min; i <= max; i++) {
+//       if (!arr.includes(i)) {
+//          result.push(i);
+//       }
+//    }
+//    return result;
+// }
 
-console.log(findDisappearedNumbers([1,3,4,7]));
+// console.log(findDisappearedNumbers([1,3,4,7]));
+
+
+/*
+PM2 COMMANDS
+
+pm2 ls
+pm2 start dist/server.js --name=CYBER
+pm2 start "npm run start:prod" --name=CYBER
+pm2 stop id
+pm2 delete id
+pm2 restart id
+pm2 monit
+pm2 kill
+*/
