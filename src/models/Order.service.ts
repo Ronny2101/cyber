@@ -110,7 +110,7 @@ class OrderService {
          orderStatus = input.orderStatus;
 
          const result = await this.orderModel
-         .findByIdAndUpdate({
+         .findOneAndUpdate({
             memberId: memberId,
             _id: orderId,
          },

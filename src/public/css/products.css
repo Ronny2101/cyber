@@ -6,7 +6,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383);
+  /* background-image: url("../img/back.jpg"); */
+  background-size: 100% 100%;
+  background: linear-gradient(-45deg, #52eebd, #3ccbe7, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383); */
 }
 
 .products-container a {
@@ -15,7 +18,7 @@
 }
 
 .products-container .nav-item a {
-  color: #e3c08d;
+  color: #34322f;
 }
 
 .products-container .nav-item a.disabled {
@@ -28,7 +31,7 @@
   top: 1%;
   color: #efefee;
   font-size: 40px;
-  font-family: monospace;
+  font-family:'Times New Roman';
 }
 
 .products-container .restaurant-menu-frame {
@@ -67,6 +70,7 @@
   margin-top: 20px;
   width: 100%;
   height: auto;
+  
 
  
   display: none;
@@ -80,7 +84,7 @@
   font-weight: 400;
   font-size: 30px;
   line-height: 25px;
-  color: #ffffff;
+  color: #f6e9e9;
 }
 
 .products-container .long-input {
@@ -98,7 +102,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 25px;
-  color: #ffffff;
+  color: #fcf5f5fa;
 }
 
 .products-container .long-input input {
@@ -108,7 +112,7 @@
   width: 100%;
   height: 54px;
   border: none;
-  background: #f7f7f7;
+  background: #f7f7f76f;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   font-family: "GT Walsheim Pro";
@@ -116,7 +120,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 26px;
-  color: #4f547b;
+  color: #121213;
 }
 
 .products-container .long-input textarea {
@@ -125,8 +129,8 @@
   padding: 20px;
   width: 100%;
   height: 200px;
-  border: none;
-  background: #f7f7f7;
+  /* border: none; */
+  background: #f7f7f76f;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   font-family: "GT Walsheim Pro";
@@ -134,7 +138,7 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 26px;
-  color: #4f547b;
+  color: #151516;
 }
 
 .products-container .half-input select {
@@ -145,7 +149,7 @@
   height: 55px;
   display: flex;
   border: none;
-  background: #f7f7f7;
+  background: #f7f7f76f;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   font-family: "GT Walsheim Pro";
@@ -169,7 +173,7 @@
   height: 55px;
   display: flex;
   border: none;
-  background: #f7f7f7;
+  background: #f7f7f76f;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   font-family: "GT Walsheim Pro";
@@ -214,7 +218,7 @@
   width: 100%;
   height: 54px;
   border: none;
-  background: #f7f7f7;
+  background: #f7f7f76f;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 }
@@ -262,7 +266,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 25px;
-  color: #ffffff;
+  color: #f2ebeb;
 }
 
 .products-container #file {
@@ -345,7 +349,7 @@ table th {
 }
 
 .products-container input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #2195f3;
 }
 
 .products-container input:focus + .slider {

@@ -1,16 +1,27 @@
-export enum ProductSize {
-    SMALL = "SMALL",
-    NORMAL = "NORMAL",
-    LARGE = "LARGE",
-    SET = "SET",
+export enum ProductColor {
+    WHITE = "WHITE",
+    BLACK = "BLACK",
+    GREY = "GREY",
+    GREEN = "GREEN",
+    RED = "RED",
 }
 
-export enum ProductVolume {
-    HALF = 0.5,
-    ONE = 1,
-    ONE_POINT_TWO = 1.2,
-    ONE_POINT_FIVE = 1.5,
-    TWO = 2,
+export enum ProductSize {
+    S_128GB = "S_128GB",
+    S_256GB = "S_256GB",
+    S_512GB = "S_512GB",
+    S_1TB = "S_1TB",
+    PC_128GB = "PC_128GB",
+    PC_256GB = "PC_256GB",
+    PC_512GB = "PC_512GB",
+    PC_1TB = "PC_1TB",
+    TV_24 = "TV_24",
+    TV_32 = "TV_32",
+    TV_64 = "TV_64",
+    RF_150 = "RF_150",
+    RF_300 = "RF_300",
+    RF_500 = "RF_500",
+    ANY = "ANY",
 }
 
 export enum ProductStatus {
@@ -21,9 +32,11 @@ export enum ProductStatus {
 
 
 export enum ProductCollection {
-    DISH = "DISH",
-    SALAD = "SALAD",
-    DESERT = "DESERT",
-    DRINK = "DRINK",
-    OTHER = "OTHER ",
+    CAMERAS = "CAMERAS",
+    TV = "TV",
+    REFRIGERATOR = "REFRIGERATOR",
+    COMPUTERS = "COMPUTERS",
+    SMARTWATCHES = "SMARTWATCHES",
+    PHONES = "PHONES",
+    OTHER = "OTHER",
 }

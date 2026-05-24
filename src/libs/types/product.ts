@@ -9,11 +9,11 @@ export interface Product {
     productName : string;
     productPrice: number;
     productLeftCount : number;
-    productSize : ProductSize;
-    productVolume: number;
+    productSize: ProductSize;
+    productColor: string;
     productDesc?: string;
     productImages: string[];
-    productViews : number;
+    productViews: number;
     createdAt: Date;
     updatedAt: Date;
 }
@@ -35,8 +35,8 @@ export interface ProductInput {
     productName: string;
     productPrice: number;
     productLeftCount: number;
-    productSize? : ProductSize;
-    productVolume?: number;
+    productSize?: ProductSize;
+    productColor?: string;
     productDesc?: string;
     productImages?: string[];
     productViews? : number;
@@ -50,8 +50,8 @@ export interface ProductUpdateInput {
     productName : string;
     productPrice: number;
     productLeftCount : number;
-    productSize? : ProductSize;
-    productVolume?: number;
+    productSize?: ProductSize;
+    productColor?: string;
     productDesc?: string;
     productImages?: string[];
     productViews? : number;

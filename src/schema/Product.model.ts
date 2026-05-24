@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { ProductCollection, ProductSize, ProductStatus, ProductVolume } from  "../libs/enums/product.enum";
+import { ProductCollection, ProductStatus, ProductColor, ProductSize } from  "../libs/enums/product.enum";
 
 
 
@@ -35,14 +35,14 @@ const productSchema = new Schema(
         productSize: {
             type: String,
             enum: ProductSize,
-            default: ProductSize.NORMAL,
+            default: ProductSize.S_128GB
             
         },
 
-        productVolume: {
+        productColor: {
             type: String,
-            enum: ProductVolume,
-            default: ProductVolume.ONE,
+            enum: ProductColor,
+            default: ProductColor.GREY,
             
         },
 
@@ -65,7 +65,7 @@ const productSchema = new Schema(
 );
 
 productSchema.index(
-    { productName: 1, productSize: 1, productVolume: 1 },
+    { productName: 1, productSize: 1, productColor: 1 },
     { unique: true }
 );
 

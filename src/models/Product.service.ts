@@ -23,12 +23,15 @@ class ProductService {
     public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
       const match: T = { productStatus: ProductStatus.PROCESS };
 
+      if (inquiry.productCollection) {
+        match.productCollection = inquiry.productCollection;
+      }
+
       if (inquiry.productCollection)
         match.productCollection = inquiry.productCollection;
       if (inquiry.search) {
         match.productName = { $regex: new RegExp(inquiry.search, "i")};
       }
-       
       const sort: T =
         inquiry.order === "productPrice"
         ? { [inquiry.order]: 1 }

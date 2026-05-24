@@ -16,7 +16,7 @@ class MemberService {
 
      public async getRestaurant(): Promise<Member> {
       const result = await this.memberModel
-      .findOne({memberType: MemberType.RESTAURANT})
+      .findOne({memberType: MemberType.MARKET})
       .lean()
       .exec();
       if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
@@ -114,7 +114,7 @@ public async addUserPoint(member: Member, point: number): Promise<Member> {
   const memberId = shapeIntoMongooseObjectId(member._id);
 
   return await this.memberModel
-   .findByIdAndUpdate(
+   .findOneAndUpdate(
     {
       _id: memberId,
       memberType: MemberType.USER,
@@ -132,7 +132,7 @@ public async addUserPoint(member: Member, point: number): Promise<Member> {
 
   public async processSignup(input: MemberInput): Promise<Member> {
         const exist = await this.memberModel
-            .findOne({memberType: MemberType.RESTAURANT})
+            .findOne({memberType: MemberType.MARKET})
             .exec();
         if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
          

@@ -6,7 +6,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303f0, #dd6d04, #011c1afc, #7a6868);
+  background: linear-gradient(-45deg, #52eebd, #3ccbe7, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #e0eae7f0, #17bdcf, #0cada2fc, #1cd51c); */
 }
 
 .home-container a {
@@ -15,7 +16,7 @@
 }
 
 .home-container .nav-item a {
-  color: #e3c08d;
+  color: #eae8e5;
 }
 
 .home-container .nav-item a.disabled {
@@ -60,8 +61,3 @@
   backface-visibility: hidden;
 }
 
-@media (min-width: 500px) {
-  .sphere path {
-    stroke-width: 0.4px;
-  }
-}

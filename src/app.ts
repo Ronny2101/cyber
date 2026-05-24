@@ -6,6 +6,8 @@ import routerAdmin from "./router-admin";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import { MORGAN_FORMAT } from "./libs/config";
+import { Server as SocketIOServer } from "socket.io";
+import http from "http";
 
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
@@ -26,8 +28,8 @@ const  store = new MongoDBStore({
  app.use(express.json());
  app.use(
     cors({
-        credentials: true,
         origin: true,
+        credentials: true,
     })
 );
  app.use(cookieParser());
@@ -59,4 +61,22 @@ app.use(function(req,res,next) {
  app.use("/admin", routerAdmin);   //EJS
  app.use("/", router);             //REACT
 
- export default app;
+ const server = http.createServer(app);
+ const io = new SocketIOServer( server, {
+    cors: {
+        origin: true,
+        credentials: true,
+    },
+ });
+
+ let summaryClient = 0;
+ io.on("connection", (socket) => {
+    summaryClient++;
+    console.log(`Connection & total [${summaryClient}]`);
+
+    socket.on("disconnect", () => {
+        summaryClient--;
+        console.log(`Disconnection & total [${summaryClient}]`);
+    });
+ });
+ export default server;

@@ -7,7 +7,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383);
+  /* background-image: url("../img/bacck.JPG"); */
+  background-size: 100% 100%;
+  background: linear-gradient(-45deg, #52eebd, #3ccbe7, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383); */
 }
 
 .users-container a {
@@ -16,7 +19,7 @@
 }
 
 .users-container .nav-item a {
-  color: #e3c08d;
+  color: #393530;
 }
 
 .users-container .nav-item a.disabled {
@@ -29,7 +32,7 @@
   top: 1%;
   color: #efefee;
   font-size: 40px;
-  font-family: monospace;
+  font-family:'Times New Roman';
 }
 
 .users-container .users-frame {
