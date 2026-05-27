@@ -1,5 +1,3 @@
-const { name } = require("ejs");
-
 module.exports = {
   apps: [
     {
@@ -7,7 +5,7 @@ module.exports = {
       cwd: "./",
       script: "./dist/server.js",
       watch: false,
-      env_produxtion: {
+      env_production: {
         NODE_ENV: "production",
       },
       env_development: {
